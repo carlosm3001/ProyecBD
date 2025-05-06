@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="img/logo.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Sitio web de Veterinaria Huellas Felices" />
+    <link rel="apple-touch-icon" href="img/logo.ico" />
+    <title>Veterinaria Huellas Felices</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="root">
+      <header class="navbar">
+        <img src="img/logo.png" alt="Veterinaria Huellas Felices" class="logo" />
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contáctanos</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <div class="hero-content">
+          <h1>¿Le pasó algo a tu mascota?<br />Estamos aquí para ayudarla</h1>
+          <p>Las urgencias no se esperan y en Huellas Felices estamos listos para atenderlas.</p>
+          <a href="#" class="btn-primary">¡Visítanos hoy mismo!</a>
+        </div>
+        <div class="hero-image">
+          <img src="img/perrito.png" alt="Perrito con gafas" />
+        </div>
+      </section>
+
+            <!-- Botones flotantes de contacto -->
+            <div class="floating-buttons">
+              <a href="tel:+573214002119" class="call-btn">📞 Llámanos</a>
+              <a href="https://wa.me/573214002119" class="whatsapp-btn" target="_blank">💬 Escríbenos</a>
+            </div>
+
+      <section class="veterinaria">
+        <h2>Veterinaria 24 Horas en Florencia</h2>
+        <div class="contenedor-servicios">
+          <div class="servicio"><img src="img/diagnostico.png" alt="Ayudas Diagnósticas" /><p>Ayudas Diagnósticas</p></div>
+          <div class="servicio"><img src="img/hospital.png" alt="Hospitalización" /><p>Hospitalización</p></div>
+          <div class="servicio"><img src="img/urgencias.png" alt="Urgencias 24 Horas" /><p>Urgencias 24 Horas</p></div>
+          <div class="servicio"><img src="img/cirugia.png" alt="Cirugía Veterinaria" /><p>Cirugía Veterinaria</p></div>
+          <div class="servicio"><img src="img/preventiva.png" alt="Medicina Preventiva" /><p>Medicina Preventiva</p></div>
+          <div class="servicio"><img src="img/consulta.png" alt="Consulta Veterinaria" /><p>Consulta Veterinaria</p></div>
+          <div class="servicio"><img src="img/laboratorio.png" alt="Laboratorio Clínico" /><p>Laboratorio Clínico</p></div>
+        </div>
+      </section>
+
+      <section class="bienvenida">
+        <div class="bienvenida-container">
+          <h1>¡Bienvenidos a Punto Vet, Clínica Veterinaria 24 Horas en Medellín!</h1>
+          
+          <div class="bienvenida-content">
+            <p>Entendemos que las emergencias no tienen horario. Nuestra clínica veterinaria está abierta las 24 horas, los 7 días de la semana. Queremos asegurarte que en los momentos de necesidad, siempre puedes contar con nosotros.</p>
+            
+            <p>Contamos con un equipo de auxiliares y profesionales altamente capacitados y es justamente eso lo que distingue a nuestra clínica. Cada uno de ellos tiene una profunda pasión por los animales y se esfuerza por brindar la atención de la más alta calidad. Además, cuentan con una amplia experiencia en una variedad de especialidades, desde cirugía veterinaria hasta medicina preventiva, laboratorio clínico y más.</p>
+            
+            <p class="destacado">Creemos que cada mascota es única y merece una atención personalizada.</p>
+            
+            <button class="btn-info">Quiero más información</button>
+          </div>
+        </div>
+     
+      
+      <!-- Modal de Autenticación -->
+      <div id="auth-modal" class="modal-overlay">
+        <div class="modal-content">
+          <button class="close-btn" id="close-auth-modal">×</button>
+          
+          <!-- Pestañas Login/Registro -->
+          <div class="auth-tabs">
+            <button class="tab active" id="login-tab">Iniciar Sesión</button>
+            <button class="tab" id="register-tab">Registrarse</button>
+          </div>
+
+          <!-- Formulario de Login -->
+          <form id="login-form" class="auth-form">
+            <div class="form-group">
+              <label for="login-email">Correo Electrónico:</label>
+              <input type="email" id="login-email" required>
+            </div>
+            <div class="form-group">
+              <label for="login-password">Contraseña:</label>
+              <input type="password" id="login-password" required>
+            </div>
+            <button type="submit" class="btn-auth">Ingresar</button>
+          </form>
+
+          <!-- Formulario de Registro (oculto inicialmente) -->
+          <form id="register-form" class="auth-form" style="display: none;">
+            <div class="form-group">
+              <label for="register-name">Nombre Completo:</label>
+              <input type="text" id="register-name" required>
+            </div>
+            <div class="form-group">
+              <label for="register-email">Correo Electrónico:</label>
+              <input type="email" id="register-email" required>
+            </div>
+            <div class="form-group">
+              <label for="register-password">Contraseña:</label>
+              <input type="password" id="register-password" required minlength="6">
+            </div>
+            <div class="form-group">
+              <label for="register-confirm">Confirmar Contraseña:</label>
+              <input type="password" id="register-confirm" required>
+            </div>
+            <button type="submit" class="btn-auth">Registrarse</button>
+          </form>
+
+          <div class="auth-footer">
+            <p id="toggle-auth">¿No tienes cuenta? <a href="#">Regístrate aquí</a></p>
+            <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+          </div>
+        </div>
+      </div>
+    </section>  
+
+      <script src="auth.js"></script>
+      <script src="services.js"></script>
+    </div>
+  </body>
+</html>
