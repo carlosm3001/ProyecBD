@@ -624,12 +624,12 @@
   }
   
   .login-modal-content {
-    background: #3b4465;
+    background: #28662d;
     padding: 30px;
     border-radius: 10px;
     position: relative;
     max-width: 90%;
-    width: 500px;
+    width: 900px;
   }
   
   .close-login-modal {
@@ -638,7 +638,7 @@
     right: 15px;
     background: none;
     border: none;
-    color: white;
+    color: rgb(255, 3, 3);
     font-size: 24px;
     cursor: pointer;
   }
