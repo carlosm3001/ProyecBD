@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -6,11 +7,11 @@ const Header = () => {
       <img src="/img/logo.png" alt="Veterinaria Huellas Felices" className="logo" />
       <nav>
         <ul className="nav-links">
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#nosotros">Nosotros</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#contacto">Contáctanos</a></li>
+          <li><Link to="/">Inicio</Link></li>
+          <li><Link to="/servicios">Servicios</Link></li>
+          <li><Link to="/nosotros">Nosotros</Link></li>
+          <li><Link to="/blog">Blog</Link></li>
+          <li><Link to="/contacto">Contáctanos</Link></li>
         </ul>
       </nav>
     </header>

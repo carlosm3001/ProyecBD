@@ -642,3 +642,66 @@
     font-size: 24px;
     cursor: pointer;
   }
+  /* Estilos para la vista de detalles del servicio */
+.service-details {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 20px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.service-details h2 {
+  color: #00796b;
+  border-bottom: 2px solid #00796b;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.client-info,
+.pet-info,
+.additional-details {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.client-info h3,
+.pet-info h3,
+.additional-details h3 {
+  color: #004d40;
+  margin-bottom: 10px;
+}
+
+.client-info p,
+.pet-info p,
+.additional-details p {
+  color: #333;
+  line-height: 1.6;
+}
+
+.additional-details p {
+  margin-top: 10px;
+}
+
+
+/* Estilos para el desplegable de enfermedades */
+.additional-details select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+}
+
+.additional-details label {
+  display: block;
+  margin-top: 10px;
+  color: #004d40;
+}

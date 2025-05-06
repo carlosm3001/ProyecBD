@@ -283,3 +283,35 @@ body {
 	box-shadow: inset 0 0 0 2px #a7e245;
 	transform: translateX(30%);
 }
+/* Estilos para el resumen de datos */
+.data-summary {
+	text-align: center;
+	padding: 20px;
+	background-color: #f9f9f9;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .data-summary h2 {
+	margin-bottom: 20px;
+  }
+  
+  .data-summary p {
+	margin: 10px 0;
+	font-size: 18px;
+  }
+  
+  .btn-accept {
+	padding: 10px 20px;
+	background-color: #00796b;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 16px;
+  }
+  
+  .btn-accept:hover {
+	background-color: #004d40;
+  }
+  

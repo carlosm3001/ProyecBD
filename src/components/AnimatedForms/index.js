@@ -1,1 +1,1 @@
-export { default } from './AnimatedForms';
+export { default } from '../AnimatedForms';

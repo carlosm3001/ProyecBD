@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import AnimatedForms from './AnimatedForms/AnimatedForms';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './ServicesSection.css';
 
 const ServicesSection = ({ onServiceClick }) => {
-  const [showLoginModal, setShowLoginModal] = useState(false);
-  const [selectedService, setSelectedService] = useState(null);
+  const navigate = useNavigate();
 
   const services = [
     { id: 1, image: '/img/diagnostico.png', name: 'Ayudas Diagnósticas' },
@@ -17,16 +16,8 @@ const ServicesSection = ({ onServiceClick }) => {
   ];
 
   const handleServiceClick = (service) => {
-    setSelectedService(service);
-    setShowLoginModal(true);
-    if (onServiceClick) {
-      onServiceClick(service);
-    }
-  };
-  
-  const handleLoginSuccess = () => {
-    alert(`¡Bienvenido! Ahora puedes acceder a: ${selectedService.name}`);
-    setShowLoginModal(false);
+    onServiceClick(service);
+    navigate('/login'); // Redirige a la página de inicio de sesión
   };
 
   return (
@@ -34,8 +25,8 @@ const ServicesSection = ({ onServiceClick }) => {
       <h2>Veterinaria 24 Horas en Florencia</h2>
       <div className="contenedor-servicios">
         {services.map(service => (
-          <div 
-            className="servicio" 
+          <div
+            className="servicio"
             key={service.id}
             onClick={() => handleServiceClick(service)}
           >
@@ -46,20 +37,6 @@ const ServicesSection = ({ onServiceClick }) => {
           </div>
         ))}
       </div>
-
-      {showLoginModal && (
-        <div className="login-modal-overlay">
-          <div className="login-modal-content">
-            <button 
-              className="close-login-modal" 
-              onClick={() => setShowLoginModal(false)}
-            >
-              ×
-            </button>
-            <AnimatedForms onLoginSuccess={handleLoginSuccess} />
-          </div>
-        </div>
-      )}
     </section>
   );
 };

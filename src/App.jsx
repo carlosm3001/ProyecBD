@@ -1,51 +1,69 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import ServicesSection from './components/ServicesSection';
 import WelcomeSection from './components/WelcomeSection';
 import FloatingButtons from './components/FloatingButtons';
 import AnimatedForms from './components/AnimatedForms/AnimatedForms';
+import ServiceDetails from './components/ServiceDetails';
 import './styles.css';
 
-function App() {
-  const [showLoginModal, setShowLoginModal] = useState(false);
-  const [selectedService, setSelectedService] = useState(null);
+const Home = () => (
+  <div>
+    <HeroSection />
+    <WelcomeSection />
+    <FloatingButtons />
+  </div>
+);
 
-  // Función para manejar el clic en servicios
+const About = () => <div>Página de Nosotros</div>;
+const Blog = () => <div>Página de Blog</div>;
+const Contact = () => <div>Página de Contáctanos</div>;
+
+function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [selectedService, setSelectedService] = useState(null);
+  const [clientData, setClientData] = useState(null);
+  const [petData, setPetData] = useState(null);
+
   const handleServiceClick = (service) => {
     setSelectedService(service);
-    setShowLoginModal(true);
   };
 
-  // Función para manejar login exitoso
-  const handleLoginSuccess = () => {
-    alert(`¡Bienvenido! Ahora puedes acceder a: ${selectedService.name}`);
-    setShowLoginModal(false);
+  const handleLoginSuccess = (clientData, petData) => {
+    setClientData(clientData);
+    setPetData(petData);
+    setIsAuthenticated(true);
   };
 
   return (
-    <div className="app">
-      <Header />
-      <HeroSection />
-      <ServicesSection onServiceClick={handleServiceClick} />
-      <WelcomeSection />
-      <FloatingButtons />
-
-      {/* Modal de Login */}
-      {showLoginModal && (
-        <div className="login-modal-overlay">
-          <div className="login-modal-content">
-            <button 
-              className="close-login-modal" 
-              onClick={() => setShowLoginModal(false)}
-            >
-              ×
-            </button>
-            <AnimatedForms onLoginSuccess={handleLoginSuccess} />
-          </div>
-        </div>
-      )}
-    </div>
+    <Router>
+      <div className="app">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/nosotros" element={<About />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/contacto" element={<Contact />} />
+          <Route path="/servicios" element={
+            <ServicesSection onServiceClick={handleServiceClick} />
+          } />
+          <Route path="/detalles" element={
+            isAuthenticated ? (
+              <ServiceDetails
+                selectedService={selectedService}
+                clientData={clientData}
+                petData={petData}
+              />
+            ) : (
+              <Navigate to="/login" />
+            )
+          } />
+          <Route path="/login" element={<AnimatedForms onLoginSuccess={handleLoginSuccess} />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
