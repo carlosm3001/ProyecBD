@@ -206,76 +206,78 @@
     background-color: var(--primary);
     border-radius: 2px;
   }
+  .veterinaria {
+    padding: 40px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
   
   .contenedor-servicios {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .veterinaria {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .veterinaria h2 {
+    font-size: 2rem;
+    color: #004d40;
+    margin-bottom: 1rem;
+  }
+  
+  .contenedor-servicios {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
   }
   
   .servicio {
-    background: white;
-    padding: 30px 20px;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
-    transition: all 0.4s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 200px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    transition: transform 0.3s ease;
   }
   
   .servicio:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-5px);
   }
   
   .servicio-img-container {
-    width: 120px;
-    height: 120px;
-    background-color: #e0f7fa;
-    border-radius: 50%;
+    width: 100%;
+    height: 150px;
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
-    transition: all 0.3s ease;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 1rem;
   }
   
-  .servicio:hover .servicio-img-container {
-    background-color: #b2ebf2;
-    transform: scale(1.05);
-  }
-  
-  .servicio img {
-    width: 70px;
-    height: 70px;
+  .servicio-img-container img {
+    max-width: 100%;
+    max-height: 100%;
     object-fit: contain;
-    transition: all 0.3s ease;
   }
   
-  .servicio:hover img {
-    transform: scale(1.1);
+  .servicio-nombre {
+    font-weight: bold;
+    color: #333;
+    margin: 0.5rem 0;
   }
   
-  .servicio p {
-    margin-top: 15px;
-    font-weight: 700;
-    color: var(--primary-dark);
-    font-size: 1.2rem;
-    line-height: 1.4;
+  .servicio-precio {
+    color: #2e7d32;
+    font-weight: 500;
   }
-  
-  .service-access {
-    display: block;
-    color: #666;
-    font-size: 0.8rem;
-    margin-top: 5px;
-  }
-  
+    
   /* Sección de bienvenida */
   .bienvenida {
     background-color: #f0f9f8;
