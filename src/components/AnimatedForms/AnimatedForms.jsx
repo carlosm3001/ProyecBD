@@ -22,7 +22,6 @@ const AnimatedForms = ({ onLoginSuccess }) => {
 
   const handleAdditionalDataSubmit = (e) => {
     e.preventDefault();
-    const clientName = e.target.elements['client-name'].value;
     const petName = e.target.elements['pet-name'].value;
     const petType = e.target.elements['pet-type'].value;
 
