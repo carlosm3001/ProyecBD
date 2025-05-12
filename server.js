@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 
 // Configuración de middlewares
 app.use(cors({
-  origin: 'http://localhost:3002',
+  origin: 'http://localhost:3001',
   credentials: true
 }));
 app.use(express.json());
@@ -53,6 +53,11 @@ app.get('/api/servicios', async (req, res) => {
 // Otras rutas básicas
 app.get('/api/test', (req, res) => {
   res.json({ message: 'API funcionando', status: 'OK' });
+});
+
+app.post('/api/registro', (req, res) => {
+  const { nombre, email, password } = req.body;
+  res.json({ message: 'Registro de usuario' });
 });
 
 // Manejo de errores
